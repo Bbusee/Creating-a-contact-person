@@ -1,0 +1,33 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="profilGuncelle()"><br><br >
+      <div class="card" >
+        <div class="m-3">
+          <label for="">name</label>
+          <input [(ngModel)]="profilgoruntuleme.userName" type="text" id="eklemeName" name="guncellemeId" class="form-control">
+        </div>
+        <div class="m-3">
+          <label for="">Email</label>
+          <input [(ngModel)]="profilgoruntuleme.userEmail" type="text" id="eklemeSurname" name="guncellemeName"
+            class="form-control">
+        </div>
+
+
+        <div class="m-3">
+          <label for="email">currentPassword</label>
+          <input [(ngModel)]="profilgoruntuleme.currentPassword" type="password" class="form-control" id="guncellemeEmail" name="guncellemeEmail">
+        </div>    
+        
+        <div class="m-3">
+          <label for="">newPassword</label>
+          <input [(ngModel)]="profilgoruntuleme.newPassword" type="text" id="eklemePhone" name="guncellemePassword" class="form-control">
+        </div>
+  
+        
+      </div>
+      <button class="btn btn-primary mt-3" type="submit"> Güncelle </button>
+      
+
+    </form>
+    
+    <button class="btn btn-primary mt-3"> sil </button>
+  </div>

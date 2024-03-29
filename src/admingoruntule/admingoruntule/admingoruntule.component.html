@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="flex justify-content-center mb-3">
+    <p-toast></p-toast>
+  </div>
+  <p-table [value]="admingoruntule" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+    currentPageReportTemplate=" {first} den {last} e kadar olan kayıtlar gösteriliyor. Toplam kayıt sayısı {totalRecords}  "
+    [rowsPerPageOptions]="[10, 25, 50]" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>userId</th>
+        <th>name</th>
+        <th>password</th>
+        <th>email</th>
+
+
+        <th>işlemler</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+
+        <td>{{ product.userId}}</td>
+        <td>{{ product.userName }}</td>
+        <td>{{ product.userPassword }}</td>
+        <td>{{ product.userEmail}}</td>
+
+        <td>
+          <!-- <button class="btn btn-primary mt-3" (click)="deleteRehber(product.id)">sil</button> -->
+
+
+          <p-confirmPopup></p-confirmPopup>
+          <p-button icon="pi pi-trash" [rounded]="true" (click)="confirm($event,product.userId)" [text]="true"
+            severity="danger "></p-button>
+
+          <p-button icon="pi pi-pencil" [rounded]="true" [routerLink]="['/guncelle',product.userId]" [text]="true"
+            severity="success"></p-button>
+        </td>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" [routerLink]="['/Ekle']" [rounded]="true"
+        [text]="true"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+
+    </ng-template>
+  </p-table>

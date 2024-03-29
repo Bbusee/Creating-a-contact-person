@@ -1,0 +1,27 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="guncellerehber()"><br><br >
+  
+      <div class="card" >
+        <div class="m-3">
+          <label for="">name</label>
+          <input [(ngModel)]="rehberguncelle.name" type="text" id="eklemeName" name="guncelleName" class="form-control">
+        </div>
+        <div class="m-3">
+          <label for="">surname</label>
+          <input [(ngModel)]="rehberguncelle.surname" type="text" id="eklemeSurname" name="guncelleSurname"
+            class="form-control">
+        </div>
+        <div class="m-3">
+          <label for="">phone</label>
+          <input [(ngModel)]="rehberguncelle.phone" type="text" id="eklemePhone" name="guncellePhone" class="form-control">
+        </div>
+  
+        <div class="m-3">
+          <label for="email">email</label>
+          <input [(ngModel)]="rehberguncelle.email" type="text" class="form-control" id="guncelleEmail" name="guncelleEmail">
+        </div>    
+        
+      </div>
+      <button class="btn btn-primary mt-3" type="submit"> Güncelle </button>
+    </form>
+  </div>
